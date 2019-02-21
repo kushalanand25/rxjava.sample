@@ -19,11 +19,22 @@ public class SampleSpreasheet {
 	private static int MIN	= 1;
 	private static int MAX	= 100;
 	private static int MAX_DELAY	= 3 * 1000;
+	private static String EOL		= System.lineSeparator();
 	
 	public static void main(String[] args) {
+		printHeader();
 		reactiveSum(createObservableFromEvent("cell-A", 10), createObservableFromEvent("cell-B", 10));
+		printFooter();
 	}
 	
+	private static void printHeader() {
+		System.out.println("-------------------------- Start ------------------------" + EOL);
+	}
+
+	private static void printFooter() {
+		System.out.println(EOL + "-------------------------- End ------------------------" + EOL);
+	}
+
 	/**
 	 * Random number generator with delay 
 	 * 
